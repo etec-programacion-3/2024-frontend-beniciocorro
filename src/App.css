@@ -34,6 +34,9 @@ body {
   opacity: 0.5; 
 }
 
+.sidebar img.selected {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7489%) hue-rotate(358deg) brightness(92%) contrast(112%);
+}
 .main-content {
   margin-left: 100px;
   flex: 0.5;
