@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import smb from './media/SideBar/smb.png';
 import splatoon from './media/SideBar/splatoon.png';
@@ -15,6 +15,9 @@ import chrom from './media/Amiibos/chrom.png';
 
 function App() {
   const [selectedFranchise, setSelectedFranchise] = useState(null);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');  
 
   const amiibos = [
     { franchise: 'smb', src: mario, alt: 'Mario', price: '$10' },
@@ -31,12 +34,16 @@ function App() {
     );
   };
 
-  const renderAmiibos = () => {
-    const filteredAmiibos = selectedFranchise
-      ? amiibos.filter((amiibo) => amiibo.franchise === selectedFranchise)
-      : amiibos;
+  const filteredAmiibos = amiibos.filter((amiibo) => 
+    amiibo.alt.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-    return filteredAmiibos.map((amiibo, index) => (
+  const renderAmiibos = () => {
+    const amiibosToRender = selectedFranchise 
+      ? filteredAmiibos.filter((amiibo) => amiibo.franchise === selectedFranchise) 
+      : filteredAmiibos;
+
+    return amiibosToRender.map((amiibo, index) => (
       <div key={index} className="amiibo-card">
         <img src={amiibo.src} alt={amiibo.alt} />
         <p>{amiibo.alt}</p>
@@ -46,12 +53,39 @@ function App() {
     ));
   };
 
+  useEffect(() => {
+    let timeoutId;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && showHeader) {
+        setShowHeader(false);
+        timeoutId = setTimeout(() => setShowHeader(true), 300);
+      } else if (currentScrollY < lastScrollY && !showHeader) {
+        setShowHeader(true);
+        clearTimeout(timeoutId);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, [lastScrollY, showHeader]);
+
   return (
     <div className="App">
-      {/* Header con la barra de búsqueda */}
-      <header className="header">
+      <header className={`header ${showHeader ? '' : 'header-hidden'}`}>
         <div className="search-bar">
-          <input type="text" placeholder="Search..." />
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
+          />
         </div>
       </header>
 

@@ -9,6 +9,11 @@
   padding: 10px 0; 
   display: flex;
   justify-content: center; 
+  transition: transform 0.6s ease;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
 }
 
 /* Search bar */
@@ -23,6 +28,8 @@
   width: 100%; 
   padding: 10px;
   font-size: 16px;
+  border-radius: 20px;
+  border-color: #ddd;
 }
 
 /* Body */
