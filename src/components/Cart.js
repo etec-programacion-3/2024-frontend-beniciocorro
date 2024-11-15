@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTrash, FaArrowLeft } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 import './Cart.css';
 
 const Cart = ({ items, onRemoveItem }) => {
@@ -11,8 +12,19 @@ const Cart = ({ items, onRemoveItem }) => {
   };
 
   const handleCheckout = () => {
-    // Checkout logic would go here
-    alert('Thank you for your purchase!');
+    Swal.fire({
+      title: 'Thank you for your purchase!',
+      text: 'Your order has been successfully processed',
+      icon: 'success',
+      confirmButtonText: 'OK',
+      confirmButtonColor: '#e60012',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
   };
 
   return (

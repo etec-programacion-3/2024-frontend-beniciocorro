@@ -13,7 +13,24 @@ const Sidebar = ({ onSelectCategory, selectedCategory }) => {
       id: 'smb', 
       name: 'Super Mario Bros', 
       image: smb,
-      characters: ['Mario'] // Mario pertenece a SMB
+      characters: ['Mario']
+    },
+    { 
+      id: 'splatoon', 
+      name: 'Splatoon', 
+      image: splatoon 
+    },
+    { 
+      id: 'animal-crossing', 
+      name: 'Animal Crossing', 
+      image: acnh,
+      characters: ['Isabelle']
+    },
+    { 
+      id: 'smash', 
+      name: 'Super Smash Bros', 
+      image: ssbu,
+      characters: ['Kazuya']
     },
     { 
       id: 'zelda', 
@@ -24,24 +41,7 @@ const Sidebar = ({ onSelectCategory, selectedCategory }) => {
       id: 'fire-emblem', 
       name: 'Fire Emblem', 
       image: fireEmblem,
-      characters: ['Chrom'] // Chrom pertenece a Fire Emblem
-    },
-    { 
-      id: 'animal-crossing', 
-      name: 'Animal Crossing', 
-      image: acnh,
-      characters: ['Isabelle'] // Isabelle pertenece a ACNH
-    },
-    { 
-      id: 'splatoon', 
-      name: 'Splatoon', 
-      image: splatoon 
-    },
-    { 
-      id: 'smash', 
-      name: 'Super Smash Bros', 
-      image: ssbu,
-      characters: ['Kazuya'] // Kazuya pertenece a Smash
+      characters: ['Chrom']
     }
   ];
 
