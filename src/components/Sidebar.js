@@ -1,50 +1,74 @@
 import React from 'react';
-import { FaHome } from 'react-icons/fa';
+import './Sidebar.css';
+import acnh from '../media/SideBar/acnh.png';
+import fireEmblem from '../media/SideBar/FireEmblem.png';
 import smb from '../media/SideBar/smb.png';
 import splatoon from '../media/SideBar/splatoon.png';
-import acnh from '../media/SideBar/acnh.png';
 import ssbu from '../media/SideBar/ssbu.png';
 import zelda from '../media/SideBar/zelda.png';
-import fireEmblem from '../media/SideBar/FireEmblem.png';
-import './Sidebar.css';
 
-const CATEGORIES = [
-  { id: 'smb', name: 'Super Mario', icon: smb },
-  { id: 'splatoon', name: 'Splatoon', icon: splatoon },
-  { id: 'acnh', name: 'Animal Crossing', icon: acnh },
-  { id: 'ssbu', name: 'Super Smash Bros', icon: ssbu },
-  { id: 'zelda', name: 'The Legend of Zelda', icon: zelda },
-  { id: 'fireEmblem', name: 'Fire Emblem', icon: fireEmblem }
-];
+const Sidebar = ({ onSelectCategory, selectedCategory }) => {
+  const gameCategories = [
+    { 
+      id: 'smb', 
+      name: 'Super Mario Bros', 
+      image: smb,
+      characters: ['Mario'] // Mario pertenece a SMB
+    },
+    { 
+      id: 'zelda', 
+      name: 'The Legend of Zelda', 
+      image: zelda 
+    },
+    { 
+      id: 'fire-emblem', 
+      name: 'Fire Emblem', 
+      image: fireEmblem,
+      characters: ['Chrom'] // Chrom pertenece a Fire Emblem
+    },
+    { 
+      id: 'animal-crossing', 
+      name: 'Animal Crossing', 
+      image: acnh,
+      characters: ['Isabelle'] // Isabelle pertenece a ACNH
+    },
+    { 
+      id: 'splatoon', 
+      name: 'Splatoon', 
+      image: splatoon 
+    },
+    { 
+      id: 'smash', 
+      name: 'Super Smash Bros', 
+      image: ssbu,
+      characters: ['Kazuya'] // Kazuya pertenece a Smash
+    }
+  ];
 
-const Sidebar = ({ selectedCategory, onCategorySelect }) => {
+  const handleCategoryClick = (categoryId) => {
+    if (selectedCategory === categoryId) {
+      onSelectCategory(null);
+    } else {
+      onSelectCategory(categoryId);
+    }
+  };
+
   return (
-    <aside className="sidebar">
-      <div className="sidebar-content">
-        <button 
-          className={`category-item ${!selectedCategory ? 'active' : ''}`}
-          onClick={() => onCategorySelect(null)}
+    <nav className="sidebar">
+      {gameCategories.map((category) => (
+        <button
+          key={category.id}
+          className={`sidebar-item ${selectedCategory === category.id ? 'active' : ''}`}
+          onClick={() => handleCategoryClick(category.id)}
         >
-          <div className="category-icon all-games">
-            <FaHome />
-          </div>
-          <span>Todos</span>
+          <img 
+            src={category.image} 
+            alt={category.name} 
+            className="category-icon"
+          />
         </button>
-
-        {CATEGORIES.map((category) => (
-          <button
-            key={category.id}
-            className={`category-item ${selectedCategory === category.id ? 'active' : ''}`}
-            onClick={() => onCategorySelect(category.id)}
-          >
-            <div className="category-icon">
-              <img src={category.icon} alt={category.name} />
-            </div>
-            <span>{category.name}</span>
-          </button>
-        ))}
-      </div>
-    </aside>
+      ))}
+    </nav>
   );
 };
 

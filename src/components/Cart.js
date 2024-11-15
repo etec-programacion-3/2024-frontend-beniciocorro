@@ -11,27 +11,27 @@ const Cart = ({ items, onRemoveItem }) => {
   };
 
   const handleCheckout = () => {
-    // Aquí iría la lógica de checkout
-    alert('¡Gracias por tu compra!');
+    // Checkout logic would go here
+    alert('Thank you for your purchase!');
   };
 
   return (
     <div className="cart-container">
       <div className="cart-header">
         <button className="back-button" onClick={() => navigate('/')}>
-          <FaArrowLeft /> Volver a la tienda
+          <FaArrowLeft /> Back to Store
         </button>
-        <h2>Carrito de Compras</h2>
+        <h2>Shopping Cart</h2>
       </div>
 
       {items.length === 0 ? (
         <div className="empty-cart">
           <div className="empty-cart-content">
-            <img src="/empty-cart.png" alt="Carrito vacío" />
-            <h3>Tu carrito está vacío</h3>
-            <p>¡Agrega algunos productos increíbles!</p>
+            <img src="/empty-cart.png" alt="Empty cart" />
+            <h3>Your cart is empty</h3>
+            <p>Add some amazing products!</p>
             <button className="continue-shopping" onClick={() => navigate('/')}>
-              Continuar comprando
+              Continue Shopping
             </button>
           </div>
         </div>
@@ -63,8 +63,8 @@ const Cart = ({ items, onRemoveItem }) => {
                 <span>${calculateTotal().toFixed(2)}</span>
               </div>
               <div className="summary-row">
-                <span>Envío</span>
-                <span>Gratis</span>
+                <span>Shipping</span>
+                <span>Free</span>
               </div>
               <div className="summary-total">
                 <span>Total</span>
@@ -72,7 +72,7 @@ const Cart = ({ items, onRemoveItem }) => {
               </div>
             </div>
             <button className="checkout-button" onClick={handleCheckout}>
-              Proceder al pago
+              Proceed to Checkout
             </button>
           </div>
         </div>

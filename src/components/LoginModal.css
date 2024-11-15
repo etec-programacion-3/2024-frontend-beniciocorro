@@ -20,6 +20,8 @@
   max-width: 400px;
   position: relative;
   animation: slideUp 0.3s ease-out;
+  margin: auto;
+  transform: none !important;
 }
 
 @keyframes fadeIn {
@@ -30,11 +32,11 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px) !important;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) !important;
   }
 }
 
@@ -58,15 +60,22 @@
 
 .modal-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .modal-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .modal-logo img {
-  height: 40px;
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .modal-header h2 {
@@ -95,27 +104,35 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .form-group {
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .input-icon {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
   color: #999;
+  font-size: 16px;
+  min-width: 20px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px 15px 12px 45px;
+  padding: 12px 15px;
   border: 2px solid #eee;
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -169,4 +186,15 @@
   .modal-header h2 {
     font-size: 1.5em;
   }
+}
+
+.submit-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button:disabled:hover {
+  background: #cccccc;
+  transform: none;
 } 

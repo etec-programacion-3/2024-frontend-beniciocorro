@@ -30,9 +30,6 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #e60012;
-  font-weight: 700;
-  font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -42,7 +39,9 @@
 
 .logo-img {
   height: 40px;
-  margin-right: 10px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .navbar-search {
@@ -54,11 +53,13 @@
 .search-container {
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 40px 12px 20px;
+  padding: 12px 20px;
   border: 2px solid #eee;
   border-radius: 25px;
   font-size: 14px;
@@ -72,12 +73,10 @@
 }
 
 .search-icon {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: -40px;
   color: #666;
   cursor: pointer;
+  z-index: 1;
 }
 
 .navbar-actions {
@@ -190,4 +189,16 @@
   .login-button span {
     display: none;
   }
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover .logo-text {
+  color: #ff0000;
 } 

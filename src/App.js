@@ -29,10 +29,26 @@ import './App.css';
 const PRODUCTS = [
   { id: 1, franchise: 'smb', src: mario, name: 'Mario', price: 29.99, description: 'Super Mario Bros. Amiibo' },
   { id: 2, franchise: 'splatoon', src: marina, name: 'Marina', price: 34.99, description: 'Splatoon Amiibo' },
-  { id: 3, franchise: 'acnh', src: isabelle, name: 'Isabelle', price: 24.99, description: 'Animal Crossing Amiibo' },
-  { id: 4, franchise: 'ssbu', src: kazuya, name: 'Kazuya', price: 39.99, description: 'Super Smash Bros. Amiibo' },
+  { id: 3, franchise: 'animal-crossing', src: isabelle, name: 'Isabelle', price: 24.99, description: 'Animal Crossing Amiibo' },
+  { id: 4, franchise: 'smash', src: kazuya, name: 'Kazuya', price: 39.99, description: 'Super Smash Bros. Amiibo' },
   { id: 5, franchise: 'zelda', src: linkAmiibo, name: 'Link', price: 44.99, description: 'The Legend of Zelda Amiibo' },
-  { id: 6, franchise: 'fireEmblem', src: chrom, name: 'Chrom', price: 29.99, description: 'Fire Emblem Amiibo' },
+  { id: 6, franchise: 'fire-emblem', src: chrom, name: 'Chrom', price: 29.99, description: 'Fire Emblem Amiibo' },
+];
+
+const categories = [
+  {
+    id: 1,
+    name: "Mario",
+    franchise: "mario",
+    icon: "/icons/mario.png"
+  },
+  {
+    id: 2,
+    name: "Zelda",
+    franchise: "zelda",
+    icon: "/icons/zelda.png"
+  },
+  // ... más categorías
 ];
 
 function App() {
@@ -75,8 +91,9 @@ function App() {
         
         <div className="main-container">
           <Sidebar 
+            categories={categories} 
             selectedCategory={selectedCategory}
-            onCategorySelect={setSelectedCategory}
+            onSelectCategory={setSelectedCategory}
           />
           
           <Routes>

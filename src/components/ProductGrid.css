@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   padding: 30px;
-  margin-left: 240px;
+  margin-left: 200px;
 }
 
 .product-card {
@@ -43,7 +43,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 10px;
   transition: transform 0.5s ease;
 }
 
@@ -131,7 +132,7 @@
 
 @media (max-width: 768px) {
   .product-grid {
-    margin-left: 70px;
+    margin-left: 60px;
     gap: 20px;
     padding: 20px;
   }

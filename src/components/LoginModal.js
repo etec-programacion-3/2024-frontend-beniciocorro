@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaTimes, FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
+import axios from 'axios';
 import './LoginModal.css';
+import NintendoLogo from '../media/Nintendo.png';
 
 const LoginModal = ({ onClose, onLogin }) => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -11,24 +13,50 @@ const LoginModal = ({ onClose, onLogin }) => {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true);
 
-    if (isRegistering) {
-      if (formData.password !== formData.confirmPassword) {
-        setError('Las contraseñas no coinciden');
-        return;
+    try {
+      if (isRegistering) {
+        if (formData.password !== formData.confirmPassword) {
+          setError('Passwords do not match');
+          return;
+        }
+        
+        // Registro de usuario
+        const registerResponse = await axios.post('http://192.168.44.110:3000/register', {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password
+        });
+        
+        onLogin(registerResponse.data.user);
+      } else {
+        // Login de usuario
+        const loginResponse = await axios.post('http://192.168.44.110:3000/login', {
+          email: formData.email,
+          password: formData.password
+        });
+
+        // Guardar el token en localStorage
+        localStorage.setItem('token', loginResponse.data.token);
+        
+        // Configurar el token para futuras peticiones
+        axios.defaults.headers.common['Authorization'] = `Bearer ${loginResponse.data.token}`;
+        
+        onLogin(loginResponse.data.user);
       }
-      // Aquí iría la lógica de registro
+      
+      onClose();
+    } catch (err) {
+      setError(err.response?.data?.message || 'An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-
-    // Simulación de login/registro exitoso
-    onLogin({
-      name: formData.name || 'Usuario',
-      email: formData.email
-    });
   };
 
   const handleInputChange = (e) => {
@@ -48,9 +76,17 @@ const LoginModal = ({ onClose, onLogin }) => {
 
         <div className="modal-header">
           <div className="modal-logo">
-            <img src="/nintendo-logo.png" alt="Nintendo" />
+            <img 
+              src={NintendoLogo}
+              alt="Nintendo" 
+              style={{ 
+                width: '150px',
+                display: 'block',
+                margin: '0 auto'
+              }}
+            />
           </div>
-          <h2>{isRegistering ? 'Crear cuenta' : 'Iniciar sesión'}</h2>
+          <h2>{isRegistering ? 'Create Account' : 'Sign In'}</h2>
         </div>
 
         {error && <div className="error-message">{error}</div>}
@@ -62,7 +98,7 @@ const LoginModal = ({ onClose, onLogin }) => {
               <input
                 type="text"
                 name="name"
-                placeholder="Nombre completo"
+                placeholder="Full Name"
                 value={formData.name}
                 onChange={handleInputChange}
                 required
@@ -75,7 +111,7 @@ const LoginModal = ({ onClose, onLogin }) => {
             <input
               type="email"
               name="email"
-              placeholder="Correo electrónico"
+              placeholder="Email"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -87,7 +123,7 @@ const LoginModal = ({ onClose, onLogin }) => {
             <input
               type="password"
               name="password"
-              placeholder="Contraseña"
+              placeholder="Password"
               value={formData.password}
               onChange={handleInputChange}
               required
@@ -100,7 +136,7 @@ const LoginModal = ({ onClose, onLogin }) => {
               <input
                 type="password"
                 name="confirmPassword"
-                placeholder="Confirmar contraseña"
+                placeholder="Confirm Password"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
                 required
@@ -108,21 +144,28 @@ const LoginModal = ({ onClose, onLogin }) => {
             </div>
           )}
 
-          <button type="submit" className="submit-button">
-            {isRegistering ? 'Registrarse' : 'Iniciar sesión'}
+          <button 
+            type="submit" 
+            className="submit-button" 
+            disabled={isLoading}
+          >
+            {isLoading 
+              ? 'Loading...' 
+              : (isRegistering ? 'Sign Up' : 'Sign In')
+            }
           </button>
         </form>
 
         <div className="form-footer">
           <p>
             {isRegistering 
-              ? '¿Ya tienes una cuenta?' 
-              : '¿No tienes una cuenta?'}
+              ? 'Already have an account?' 
+              : "Don't have an account?"}
             <button 
               className="toggle-form-button"
               onClick={() => setIsRegistering(!isRegistering)}
             >
-              {isRegistering ? 'Iniciar sesión' : 'Registrarse'}
+              {isRegistering ? 'Sign In' : 'Sign Up'}
             </button>
           </p>
         </div>

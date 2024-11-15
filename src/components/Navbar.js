@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart, FaUser, FaSearch, FaBars } from 'react-icons/fa';
 import './Navbar.css';
+import miboLogo from '../media/Miibo.png';
 
 const Navbar = ({ cartCount, onSearchChange, onLoginClick, user, onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,15 +22,15 @@ const Navbar = ({ cartCount, onSearchChange, onLoginClick, user, onLogout }) => 
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/nintendo-logo.png" alt="Nintendo" className="logo-img" />
-          <span className="logo-text">Amiibo Store</span>
+          <img src={miboLogo} alt="Miibo" className="logo-img" />
+          <span className="logo-text">Miibo</span>
         </Link>
 
         <div className="navbar-search">
           <div className={`search-container ${showSearch ? 'active' : ''}`}>
             <input
               type="text"
-              placeholder="Buscar amiibo..."
+              placeholder="Search amiibo..."
               onChange={(e) => onSearchChange(e.target.value)}
               className="search-input"
             />
@@ -42,13 +43,13 @@ const Navbar = ({ cartCount, onSearchChange, onLoginClick, user, onLogout }) => 
             <div className="user-menu">
               <span className="user-name">{user.name}</span>
               <button className="logout-button" onClick={onLogout}>
-                Cerrar sesión
+                Sign out
               </button>
             </div>
           ) : (
             <button className="login-button" onClick={onLoginClick}>
               <FaUser />
-              <span>Iniciar sesión</span>
+              <span>Sign in</span>
             </button>
           )}
 

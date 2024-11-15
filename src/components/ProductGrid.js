@@ -30,7 +30,7 @@ const ProductGrid = ({ products, selectedCategory, searchQuery, onAddToCart }) =
               }}
               data-product-id={product.id}
             >
-              Agregar al carrito
+              Add to Cart
             </button>
           </div>
           <div className="product-info">
@@ -43,8 +43,8 @@ const ProductGrid = ({ products, selectedCategory, searchQuery, onAddToCart }) =
       
       {filteredProducts.length === 0 && (
         <div className="no-results">
-          <h2>No se encontraron productos</h2>
-          <p>Intenta con otra búsqueda o categoría</p>
+          <h2>No products found</h2>
+          <p>Try another search or category</p>
         </div>
       )}
     </div>
