@@ -28,8 +28,8 @@ const LoginModal = ({ onClose, onLogin }) => {
         }
         
         // Registro de usuario
-        const registerResponse = await axios.post('http://192.168.44.110:3000/register', {
-          name: formData.name,
+        const registerResponse = await axios.post('http://192.168.1.44:3001/register', {
+          nombre_usuario: formData.name,
           email: formData.email,
           password: formData.password
         });
@@ -37,7 +37,7 @@ const LoginModal = ({ onClose, onLogin }) => {
         onLogin(registerResponse.data.user);
       } else {
         // Login de usuario
-        const loginResponse = await axios.post('http://192.168.44.110:3000/login', {
+        const loginResponse = await axios.post('http://192.168.1.44:3001/login', {
           email: formData.email,
           password: formData.password
         });
