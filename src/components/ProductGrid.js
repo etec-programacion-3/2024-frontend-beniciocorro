@@ -1,54 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductGrid.css';
+import { fetchProductos } from './ProductService'; // Importa las funciones del servicio
 
-const ProductGrid = ({ products, selectedCategory, searchQuery, onAddToCart }) => {
-  const filteredProducts = products.filter(product => {
-    const matchesCategory = !selectedCategory || product.franchise === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+const ProductGrid = ({ selectedCategory, searchQuery, onAddToCart }) => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  return (
-    <div className="product-grid">
-      {filteredProducts.map((product) => (
-        <div
-          key={product.id}
-          className="product-card"
-        >
-          <div className="product-image-container">
-            <img src={product.src} alt={product.name} className="product-image" />
-            <button
-              className="add-to-cart-button"
-              onClick={() => {
-                const button = document.querySelector(`[data-product-id="${product.id}"]`);
-                button.classList.add('clicked');
-                setTimeout(() => {
-                  button.classList.remove('clicked');
-                  onAddToCart(product);
-                }, 300);
-              }}
-              data-product-id={product.id}
-            >
-              Add to Cart
-            </button>
-          </div>
-          <div className="product-info">
-            <h3 className="product-name">{product.name}</h3>
-            <p className="product-description">{product.description}</p>
-            <span className="product-price">${product.price}</span>
-          </div>
+    useEffect(() => {
+        const loadProductos = async () => {
+            try {
+                const fetchedProductos = await fetchProductos();
+                setProducts(fetchedProductos);
+            } catch (err) {
+                setError('Error loading productos');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadProductos();
+    }, []);
+
+    const filteredProducts = products.filter(product => {
+        const matchesCategory = !selectedCategory || product.categoria_id === selectedCategory;
+        const matchesSearch = product.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              product.descripcion.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    return (
+        <div className="product-grid">
+            {filteredProducts.map((product) => (
+                <div key={product.id} className="product-card">
+                    <div className="product-image-container">
+                        <img src={product.imagen_url} alt={product.nombre} className="product-image" />
+                        <button
+                            className="add-to-cart-button"
+                            onClick={() => onAddToCart(product)}
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div className="product-info">
+                        <h3 className="product-name">{product.nombre}</h3>
+                        <p className="product-description">{product.descripcion}</p>
+                        <span className="product-price">${product.precio}</span>
+                    </div>
+                </div>
+            ))}
+
+            {filteredProducts.length === 0 && (
+                <div className="no-results">
+                    <h2>No products found</h2>
+                    <p>Try another search or category</p>
+                </div>
+            )}
         </div>
-      ))}
-      
-      {filteredProducts.length === 0 && (
-        <div className="no-results">
-          <h2>No products found</h2>
-          <p>Try another search or category</p>
-        </div>
-      )}
-    </div>
-  );
+    );
 };
 
-export default ProductGrid; 
+export default ProductGrid;
