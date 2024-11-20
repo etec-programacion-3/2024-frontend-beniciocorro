@@ -764,7 +764,7 @@ const PRODUCTS = [
     src: alex, 
     name: 'Alex', 
     price: 29.99, 
-    description: 'The alternate protagonist from Minecraft' 
+    description: 'La protagonista alternativa de Minecraft' 
   },
   { 
     id: 82, 
@@ -772,7 +772,7 @@ const PRODUCTS = [
     src: banjo, 
     name: 'Banjo & Kazooie', 
     price: 34.99, 
-    description: 'The iconic duo from Banjo-Kazooie' 
+    description: 'El dúo aventurero del oso y el pájaro' 
   },
   { 
     id: 83, 
@@ -780,7 +780,7 @@ const PRODUCTS = [
     src: bayonetta, 
     name: 'Bayonetta', 
     price: 34.99, 
-    description: 'The Umbra Witch in her original outfit' 
+    description: 'La bruja Umbra en su atuendo original' 
   },
   { 
     id: 84, 
@@ -788,7 +788,7 @@ const PRODUCTS = [
     src: bayonetta2, 
     name: 'Bayonetta (P2)', 
     price: 34.99, 
-    description: 'Bayonetta in her outfit from Bayonetta 2' 
+    description: 'Bayonetta en su atuendo original' 
   },
   { 
     id: 85, 
@@ -837,6 +837,542 @@ const PRODUCTS = [
     name: 'Chrom', 
     price: 29.99, 
     description: 'The prince of Ylisse joins the battle' 
+  },
+  { 
+    id: 106, 
+    franchise: 'smash', 
+    src: greninja, 
+    name: 'Greninja', 
+    price: 34.99, 
+    description: 'The ninja-like Water/Dark-type Pokémon' 
+  },
+  { 
+    id: 107, 
+    franchise: 'smash', 
+    src: hero, 
+    name: 'Hero', 
+    price: 34.99, 
+    description: 'The legendary hero from Dragon Quest XI' 
+  },
+  { 
+    id: 108, 
+    franchise: 'smash', 
+    src: iceClimbers, 
+    name: 'Ice Climbers', 
+    price: 34.99, 
+    description: 'Popo and Nana, the mountain-climbing duo' 
+  },
+  { 
+    id: 109, 
+    franchise: 'smash', 
+    src: ike, 
+    name: 'Ike', 
+    price: 34.99, 
+    description: 'The legendary mercenary from Fire Emblem' 
+  },
+  { 
+    id: 110, 
+    franchise: 'smash', 
+    src: incineroar, 
+    name: 'Incineroar', 
+    price: 34.99, 
+    description: 'The heel wrestler Fire/Dark-type Pokémon' 
+  },
+  { 
+    id: 111, 
+    franchise: 'smash', 
+    src: inkling, 
+    name: 'Inkling', 
+    price: 34.99, 
+    description: 'The colorful fighters from Splatoon' 
+  },
+  { 
+    id: 112, 
+    franchise: 'smash', 
+    src: isabelleSmash, 
+    name: 'Isabelle', 
+    price: 29.99, 
+    description: 'The helpful secretary from Animal Crossing' 
+  },
+  { 
+    id: 113, 
+    franchise: 'smash', 
+    src: ivysaur, 
+    name: 'Ivysaur', 
+    price: 29.99, 
+    description: 'The evolving Grass/Poison-type Pokémon' 
+  },
+  { 
+    id: 114, 
+    franchise: 'smash', 
+    src: jigglypuff, 
+    name: 'Jigglypuff', 
+    price: 29.99, 
+    description: 'The balloon Pokémon with a deadly lullaby' 
+  },
+  { 
+    id: 115, 
+    franchise: 'smash', 
+    src: joker, 
+    name: 'Joker', 
+    price: 34.99, 
+    description: 'The phantom thief from Persona 5' 
+  },
+  { 
+    id: 116, 
+    franchise: 'smash', 
+    src: kazuyaSmash, 
+    name: 'Kazuya', 
+    price: 34.99, 
+    description: 'The powerful martial artist from Tekken' 
+  },
+  { 
+    id: 117, 
+    franchise: 'smash', 
+    src: ken, 
+    name: 'Ken', 
+    price: 34.99, 
+    description: 'The burning Shoryuken master from Street Fighter' 
+  },
+  { 
+    id: 118, 
+    franchise: 'smash', 
+    src: kingDedede, 
+    name: 'King Dedede', 
+    price: 34.99, 
+    description: 'The self-proclaimed king of Dream Land' 
+  },
+  { 
+    id: 119, 
+    franchise: 'smash', 
+    src: kingKRool, 
+    name: 'King K. Rool', 
+    price: 34.99, 
+    description: 'The kremling king and arch-nemesis of the Kong family' 
+  },
+  { 
+    id: 120, 
+    franchise: 'smash', 
+    src: kirby, 
+    name: 'Kirby', 
+    price: 29.99, 
+    description: 'The powerful pink puffball from Dream Land' 
+  },
+  { 
+    id: 121, 
+    franchise: 'smash', 
+    src: linkSmash, 
+    name: 'Link', 
+    price: 34.99, 
+    description: 'The legendary hero of Hyrule' 
+  },
+  { 
+    id: 122, 
+    franchise: 'smash', 
+    src: littleMac, 
+    name: 'Little Mac', 
+    price: 29.99, 
+    description: 'The determined boxer from Punch-Out!!' 
+  },
+  { 
+    id: 123, 
+    franchise: 'smash', 
+    src: lucario, 
+    name: 'Lucario', 
+    price: 34.99, 
+    description: 'The Aura Pokémon with fighting spirit' 
+  },
+  { 
+    id: 124, 
+    franchise: 'smash', 
+    src: lucas, 
+    name: 'Lucas', 
+    price: 29.99, 
+    description: 'The young PSI user from Mother 3' 
+  },
+  { 
+    id: 125, 
+    franchise: 'smash', 
+    src: lucina, 
+    name: 'Lucina', 
+    price: 34.99, 
+    description: 'The warrior princess from the future in Fire Emblem Awakening' 
+  },
+  { 
+    id: 126, 
+    franchise: 'smash', 
+    src: luigiSmash, 
+    name: 'Luigi', 
+    price: 29.99, 
+    description: 'The green-clad plumber with a powerful uppercut' 
+  },
+  { 
+    id: 127, 
+    franchise: 'smash', 
+    src: marth, 
+    name: 'Marth', 
+    price: 34.99, 
+    description: 'The legendary Hero-King from Fire Emblem' 
+  },
+  { 
+    id: 128, 
+    franchise: 'smash', 
+    src: megaman, 
+    name: 'Mega Man', 
+    price: 34.99, 
+    description: 'The Blue Bomber with his arsenal of weapons' 
+  },
+  { 
+    id: 129, 
+    franchise: 'smash', 
+    src: metaKnight, 
+    name: 'Meta Knight', 
+    price: 34.99, 
+    description: 'The mysterious masked warrior from Dream Land' 
+  },
+  { 
+    id: 130, 
+    franchise: 'smash', 
+    src: mewtwo, 
+    name: 'Mewtwo', 
+    price: 34.99, 
+    description: 'The genetically engineered Psychic-type Pokémon' 
+  },
+  { 
+    id: 131, 
+    franchise: 'smash', 
+    src: minMin, 
+    name: 'Min Min', 
+    price: 34.99, 
+    description: 'The ramen fighter from ARMS' 
+  },
+  { 
+    id: 132, 
+    franchise: 'smash', 
+    src: ness, 
+    name: 'Ness', 
+    price: 29.99, 
+    description: 'The young PSI hero from EarthBound' 
+  },
+  { 
+    id: 133, 
+    franchise: 'smash', 
+    src: olimar, 
+    name: 'Olimar', 
+    price: 29.99, 
+    description: 'The tiny captain with his loyal Pikmin' 
+  },
+  { 
+    id: 134, 
+    franchise: 'smash', 
+    src: pacMan, 
+    name: 'Pac-Man', 
+    price: 29.99, 
+    description: 'The legendary arcade hero' 
+  },
+  { 
+    id: 135, 
+    franchise: 'smash', 
+    src: palutena, 
+    name: 'Palutena', 
+    price: 34.99, 
+    description: 'The goddess of light from Kid Icarus' 
+  },
+  { 
+    id: 136, 
+    franchise: 'smash', 
+    src: pichu, 
+    name: 'Pichu', 
+    price: 29.99, 
+    description: 'The tiny Electric-type Pokémon that damages itself' 
+  },
+  { 
+    id: 137, 
+    franchise: 'smash', 
+    src: pikachu, 
+    name: 'Pikachu', 
+    price: 29.99, 
+    description: 'The iconic Electric-type Pokémon mascot' 
+  },
+  { 
+    id: 138, 
+    franchise: 'smash', 
+    src: pit, 
+    name: 'Pit', 
+    price: 29.99, 
+    description: 'The angelic captain of Palutena\'s guard' 
+  },
+  { 
+    id: 139, 
+    franchise: 'smash', 
+    src: pokemonTrainer, 
+    name: 'Pokémon Trainer', 
+    price: 34.99, 
+    description: 'The trainer who commands Squirtle, Ivysaur, and Charizard' 
+  },
+  { 
+    id: 140, 
+    franchise: 'smash', 
+    src: richter, 
+    name: 'Richter', 
+    price: 34.99, 
+    description: 'The vampire hunter from Castlevania' 
+  },
+  { 
+    id: 141, 
+    franchise: 'smash', 
+    src: ridley, 
+    name: 'Ridley', 
+    price: 34.99, 
+    description: 'The cunning space pirate from Metroid' 
+  },
+  { 
+    id: 142, 
+    franchise: 'smash', 
+    src: rob, 
+    name: 'R.O.B.', 
+    price: 29.99, 
+    description: 'The Robotic Operating Buddy from Nintendo\'s history' 
+  },
+  { 
+    id: 143, 
+    franchise: 'smash', 
+    src: robin, 
+    name: 'Robin', 
+    price: 34.99, 
+    description: 'The tactical magician from Fire Emblem Awakening' 
+  },
+  { 
+    id: 144, 
+    franchise: 'smash', 
+    src: rosalinaSmash, 
+    name: 'Rosalina & Luma', 
+    price: 34.99, 
+    description: 'The cosmic princess and her star companion' 
+  },
+  { 
+    id: 145, 
+    franchise: 'smash', 
+    src: roy, 
+    name: 'Roy', 
+    price: 34.99, 
+    description: 'The young lion from Fire Emblem' 
+  },
+  { 
+    id: 146, 
+    franchise: 'smash', 
+    src: ryu, 
+    name: 'Ryu', 
+    price: 34.99, 
+    description: 'The wandering warrior from Street Fighter' 
+  },
+  { 
+    id: 147, 
+    franchise: 'smash', 
+    src: samus, 
+    name: 'Samus', 
+    price: 34.99, 
+    description: 'The legendary bounty hunter in her Power Suit' 
+  },
+  { 
+    id: 148, 
+    franchise: 'smash', 
+    src: sephiroth, 
+    name: 'Sephiroth', 
+    price: 39.99, 
+    description: 'The legendary SOLDIER and nemesis of Cloud' 
+  },
+  { 
+    id: 149, 
+    franchise: 'smash', 
+    src: sheik, 
+    name: 'Sheik', 
+    price: 29.99, 
+    description: 'The mysterious Sheikah warrior' 
+  },
+  { 
+    id: 150, 
+    franchise: 'smash', 
+    src: shulk, 
+    name: 'Shulk', 
+    price: 34.99, 
+    description: 'The wielder of the Monado from Xenoblade Chronicles' 
+  },
+  { 
+    id: 151, 
+    franchise: 'smash', 
+    src: miiBrawler, 
+    name: 'Mii Brawler', 
+    price: 29.99, 
+    description: 'Your custom fighter specializing in hand-to-hand combat' 
+  },
+  { 
+    id: 152, 
+    franchise: 'smash', 
+    src: miiGunner, 
+    name: 'Mii Gunner', 
+    price: 29.99, 
+    description: 'Your custom fighter specializing in projectile attacks' 
+  },
+  { 
+    id: 153, 
+    franchise: 'smash', 
+    src: miiSwordfighter, 
+    name: 'Mii Swordfighter', 
+    price: 29.99, 
+    description: 'Your custom fighter specializing in sword-based combat' 
+  },
+  { 
+    id: 154, 
+    franchise: 'smash', 
+    src: simon, 
+    name: 'Simon', 
+    price: 34.99, 
+    description: 'El legendario cazador de vampiros de Castlevania' 
+  },
+  { 
+    id: 155, 
+    franchise: 'smash', 
+    src: snake, 
+    name: 'Snake', 
+    price: 34.99, 
+    description: 'El legendario soldado de Metal Gear Solid' 
+  },
+  { 
+    id: 156, 
+    franchise: 'smash', 
+    src: sonic, 
+    name: 'Sonic', 
+    price: 34.99, 
+    description: 'El erizo más rápido del mundo' 
+  },
+  { 
+    id: 157, 
+    franchise: 'smash', 
+    src: sora, 
+    name: 'Sora', 
+    price: 39.99, 
+    description: 'El portador de la Llave Espada de Kingdom Hearts' 
+  },
+  { 
+    id: 158, 
+    franchise: 'smash', 
+    src: squirtle, 
+    name: 'Squirtle', 
+    price: 29.99, 
+    description: 'El Pokémon tipo agua inicial de Kanto' 
+  },
+  { 
+    id: 159, 
+    franchise: 'smash', 
+    src: steve, 
+    name: 'Steve', 
+    price: 34.99, 
+    description: 'El icónico minero de Minecraft' 
+  },
+  { 
+    id: 160, 
+    franchise: 'smash', 
+    src: terry, 
+    name: 'Terry', 
+    price: 34.99, 
+    description: 'El legendario lobo hambriento de Fatal Fury' 
+  },
+  { 
+    id: 161, 
+    franchise: 'smash', 
+    src: toonLink, 
+    name: 'Toon Link', 
+    price: 29.99, 
+    description: 'La versión caricaturesca del héroe de Hyrule' 
+  },
+  { 
+    id: 162, 
+    franchise: 'smash', 
+    src: villager, 
+    name: 'Villager', 
+    price: 29.99, 
+    description: 'El carismático aldeano de Animal Crossing' 
+  },
+  { 
+    id: 163, 
+    franchise: 'smash', 
+    src: warioSmash, 
+    name: 'Wario', 
+    price: 29.99, 
+    description: 'El codicioso antihéroe y rival de Mario' 
+  },
+  { 
+    id: 164, 
+    franchise: 'smash', 
+    src: wiiFitTrainer, 
+    name: 'Wii Fit Trainer', 
+    price: 29.99, 
+    description: 'La instructora de ejercicios de Wii Fit' 
+  },
+  { 
+    id: 165, 
+    franchise: 'smash', 
+    src: wolf, 
+    name: 'Wolf', 
+    price: 34.99, 
+    description: 'El líder de Star Wolf y rival de Fox' 
+  },
+  { 
+    id: 166, 
+    franchise: 'smash', 
+    src: yoshiSmash, 
+    name: 'Yoshi', 
+    price: 29.99, 
+    description: 'El fiel compañero dinosaurio de Mario' 
+  },
+  { 
+    id: 167, 
+    franchise: 'smash', 
+    src: youngLink, 
+    name: 'Young Link', 
+    price: 29.99, 
+    description: 'La versión joven de Link de Ocarina of Time' 
+  },
+  { 
+    id: 168, 
+    franchise: 'smash', 
+    src: zeldaSmash, 
+    name: 'Zelda', 
+    price: 34.99, 
+    description: 'La sabia princesa de Hyrule' 
+  },
+  { 
+    id: 169, 
+    franchise: 'smash', 
+    src: zeroSuitSamus, 
+    name: 'Zero Suit Samus', 
+    price: 34.99, 
+    description: 'Samus Aran sin su traje energético' 
+  },
+  { 
+    id: 170, 
+    franchise: 'smash', 
+    src: gameAndWatch, 
+    name: 'Mr. Game & Watch', 
+    price: 29.99, 
+    description: 'El héroe 2D de los clásicos Game & Watch' 
+  },
+  { 
+    id: 171, 
+    franchise: 'smash', 
+    src: cloud, 
+    name: 'Cloud', 
+    price: 34.99, 
+    description: 'El ex-SOLDADO de Final Fantasy VII' 
+  },
+  { 
+    id: 172, 
+    franchise: 'smash', 
+    src: cloud2, 
+    name: 'Cloud (Advent Children)', 
+    price: 34.99, 
+    description: 'Cloud en su atuendo de Advent Children' 
   }
 ];
 

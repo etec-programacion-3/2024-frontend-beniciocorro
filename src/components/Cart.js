@@ -39,9 +39,6 @@ const Cart = ({ items, onRemoveItem }) => {
       {items.length === 0 ? (
         <div className="empty-cart">
           <div className="empty-cart-content">
-            <img src="/empty-cart.png" alt="Empty cart" />
-            <h3>Your cart is empty</h3>
-            <p>Add some amazing products!</p>
             <button className="continue-shopping" onClick={() => navigate('/')}>
               Continue Shopping
             </button>
