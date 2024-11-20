@@ -90,4 +90,4 @@ const Cart = ({ items, onRemoveItem }) => {
   );
 };
 
-export default Cart; 
+export default Cart;

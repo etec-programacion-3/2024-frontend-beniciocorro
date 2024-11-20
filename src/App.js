@@ -764,7 +764,7 @@ const PRODUCTS = [
     src: alex, 
     name: 'Alex', 
     price: 29.99, 
-    description: 'La protagonista alternativa de Minecraft' 
+    description: 'The alternative protagonist from Minecraft' 
   },
   { 
     id: 82, 
@@ -772,7 +772,7 @@ const PRODUCTS = [
     src: banjo, 
     name: 'Banjo & Kazooie', 
     price: 34.99, 
-    description: 'El dúo aventurero del oso y el pájaro' 
+    description: 'The adventurous duo of the bear and the bird' 
   },
   { 
     id: 83, 
@@ -780,7 +780,7 @@ const PRODUCTS = [
     src: bayonetta, 
     name: 'Bayonetta', 
     price: 34.99, 
-    description: 'La bruja Umbra en su atuendo original' 
+    description: 'The original Umbra Witch in her attire' 
   },
   { 
     id: 84, 
@@ -788,7 +788,7 @@ const PRODUCTS = [
     src: bayonetta2, 
     name: 'Bayonetta (P2)', 
     price: 34.99, 
-    description: 'Bayonetta en su atuendo original' 
+    description: 'Bayonetta in her original attire' 
   },
   { 
     id: 85, 
@@ -1228,7 +1228,7 @@ const PRODUCTS = [
     src: simon, 
     name: 'Simon', 
     price: 34.99, 
-    description: 'El legendario cazador de vampiros de Castlevania' 
+    description: 'The legendary vampire hunter from Castlevania' 
   },
   { 
     id: 155, 
@@ -1236,7 +1236,7 @@ const PRODUCTS = [
     src: snake, 
     name: 'Snake', 
     price: 34.99, 
-    description: 'El legendario soldado de Metal Gear Solid' 
+    description: 'The legendary soldier from Metal Gear Solid' 
   },
   { 
     id: 156, 
@@ -1244,7 +1244,7 @@ const PRODUCTS = [
     src: sonic, 
     name: 'Sonic', 
     price: 34.99, 
-    description: 'El erizo más rápido del mundo' 
+    description: 'The fastest hedgehog in the world' 
   },
   { 
     id: 157, 
@@ -1252,7 +1252,7 @@ const PRODUCTS = [
     src: sora, 
     name: 'Sora', 
     price: 39.99, 
-    description: 'El portador de la Llave Espada de Kingdom Hearts' 
+    description: 'The Keyblade wielder from Kingdom Hearts' 
   },
   { 
     id: 158, 
@@ -1260,7 +1260,7 @@ const PRODUCTS = [
     src: squirtle, 
     name: 'Squirtle', 
     price: 29.99, 
-    description: 'El Pokémon tipo agua inicial de Kanto' 
+    description: 'The iconic Water-type Pokémon from Kanto' 
   },
   { 
     id: 159, 
@@ -1268,7 +1268,7 @@ const PRODUCTS = [
     src: steve, 
     name: 'Steve', 
     price: 34.99, 
-    description: 'El icónico minero de Minecraft' 
+    description: 'The iconic Minecraft miner' 
   },
   { 
     id: 160, 
@@ -1276,7 +1276,7 @@ const PRODUCTS = [
     src: terry, 
     name: 'Terry', 
     price: 34.99, 
-    description: 'El legendario lobo hambriento de Fatal Fury' 
+    description: 'The legendary ravenous wolf from Fatal Fury' 
   },
   { 
     id: 161, 
@@ -1284,7 +1284,7 @@ const PRODUCTS = [
     src: toonLink, 
     name: 'Toon Link', 
     price: 29.99, 
-    description: 'La versión caricaturesca del héroe de Hyrule' 
+    description: 'The caricature version of the Hyrule hero' 
   },
   { 
     id: 162, 
@@ -1292,7 +1292,7 @@ const PRODUCTS = [
     src: villager, 
     name: 'Villager', 
     price: 29.99, 
-    description: 'El carismático aldeano de Animal Crossing' 
+    description: 'The charismatic Animal Crossing villager' 
   },
   { 
     id: 163, 
@@ -1300,7 +1300,7 @@ const PRODUCTS = [
     src: warioSmash, 
     name: 'Wario', 
     price: 29.99, 
-    description: 'El codicioso antihéroe y rival de Mario' 
+    description: 'The greedy antihero and rival of Mario' 
   },
   { 
     id: 164, 
@@ -1308,7 +1308,7 @@ const PRODUCTS = [
     src: wiiFitTrainer, 
     name: 'Wii Fit Trainer', 
     price: 29.99, 
-    description: 'La instructora de ejercicios de Wii Fit' 
+    description: 'The Wii Fit instructor' 
   },
   { 
     id: 165, 
@@ -1316,7 +1316,7 @@ const PRODUCTS = [
     src: wolf, 
     name: 'Wolf', 
     price: 34.99, 
-    description: 'El líder de Star Wolf y rival de Fox' 
+    description: 'The leader of Star Wolf and rival of Fox' 
   },
   { 
     id: 166, 
@@ -1324,7 +1324,7 @@ const PRODUCTS = [
     src: yoshiSmash, 
     name: 'Yoshi', 
     price: 29.99, 
-    description: 'El fiel compañero dinosaurio de Mario' 
+    description: 'Mario\'s faithful dinosaur companion' 
   },
   { 
     id: 167, 
@@ -1332,7 +1332,7 @@ const PRODUCTS = [
     src: youngLink, 
     name: 'Young Link', 
     price: 29.99, 
-    description: 'La versión joven de Link de Ocarina of Time' 
+    description: 'The young version of Link from Ocarina of Time' 
   },
   { 
     id: 168, 
@@ -1340,7 +1340,7 @@ const PRODUCTS = [
     src: zeldaSmash, 
     name: 'Zelda', 
     price: 34.99, 
-    description: 'La sabia princesa de Hyrule' 
+    description: 'The wise princess of Hyrule' 
   },
   { 
     id: 169, 
@@ -1348,7 +1348,7 @@ const PRODUCTS = [
     src: zeroSuitSamus, 
     name: 'Zero Suit Samus', 
     price: 34.99, 
-    description: 'Samus Aran sin su traje energético' 
+    description: 'Samus Aran without her Power Suit' 
   },
   { 
     id: 170, 
@@ -1356,7 +1356,7 @@ const PRODUCTS = [
     src: gameAndWatch, 
     name: 'Mr. Game & Watch', 
     price: 29.99, 
-    description: 'El héroe 2D de los clásicos Game & Watch' 
+    description: 'The 2D hero from the classic Game & Watch series' 
   },
   { 
     id: 171, 
@@ -1364,7 +1364,7 @@ const PRODUCTS = [
     src: cloud, 
     name: 'Cloud', 
     price: 34.99, 
-    description: 'El ex-SOLDADO de Final Fantasy VII' 
+    description: 'The ex-SOLDIER from Final Fantasy VII' 
   },
   { 
     id: 172, 
@@ -1372,7 +1372,7 @@ const PRODUCTS = [
     src: cloud2, 
     name: 'Cloud (Advent Children)', 
     price: 34.99, 
-    description: 'Cloud en su atuendo de Advent Children' 
+    description: 'Cloud in his Advent Children attire' 
   }
 ];
 
@@ -1395,10 +1395,18 @@ const categories = [
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
   const [user, setUser] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    // Verificar si hay un token al cargar la aplicación
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const addToCart = (product) => {
     setCartItems(prev => [...prev, { ...product, cartId: Date.now() }]);
@@ -1409,14 +1417,18 @@ function App() {
   };
 
   const handleLogin = (userData) => {
+    console.log('handleLogin called with:', userData);
     setUser(userData);
     setIsLoggedIn(true);
     setShowLoginModal(false);
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null);
     setIsLoggedIn(false);
+    window.location.reload(); // Forzar recarga para limpiar el estado
   };
 
   return (

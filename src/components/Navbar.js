@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaShoppingCart, FaUser, FaSearch, FaBars } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaSearch, FaBars, FaSignOutAlt } from 'react-icons/fa';
 import './Navbar.css';
 import miboLogo from '../media/Miibo.png';
 
 const Navbar = ({ cartCount, onSearchChange, onLoginClick, user, onLogout }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const navigate = useNavigate();
+  
+  // Safely get user data
+  const getUserData = () => {
+    try {
+      const userData = localStorage.getItem('user');
+      return userData ? JSON.parse(userData) : null;
+    } catch (error) {
+      console.error('Error parsing user data:', error);
+      return null;
+    }
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const userData = getUserData() || user;
+  const isLoggedIn = !!localStorage.getItem('token');
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  console.log('Navbar state:', { isLoggedIn, userData });
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src={miboLogo} alt="Miibo" className="logo-img" />
@@ -39,17 +44,18 @@ const Navbar = ({ cartCount, onSearchChange, onLoginClick, user, onLogout }) => 
         </div>
 
         <div className="navbar-actions">
-          {user ? (
+          {isLoggedIn && userData ? (
             <div className="user-menu">
-              <span className="user-name">{user.name}</span>
+              <span className="user-name">{userData.nombre_usuario}</span>
               <button className="logout-button" onClick={onLogout}>
-                Sign out
+                <FaSignOutAlt />
+                <span>Sign Out</span>
               </button>
             </div>
           ) : (
             <button className="login-button" onClick={onLoginClick}>
               <FaUser />
-              <span>Sign in</span>
+              <span>Sign In</span>
             </button>
           )}
 
