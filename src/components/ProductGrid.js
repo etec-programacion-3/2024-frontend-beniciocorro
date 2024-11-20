@@ -2,12 +2,14 @@ import React from 'react';
 import './ProductGrid.css';
 
 const ProductGrid = ({ products, selectedCategory, searchQuery, onAddToCart }) => {
-    const filteredProducts = products.filter(product => {
-        const matchesCategory = !selectedCategory || product.franchise === selectedCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            product.description.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
-    });
+    const filteredProducts = products
+        .filter(product => {
+            const matchesCategory = !selectedCategory || product.franchise === selectedCategory;
+            const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                product.description.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+        })
+        .sort((a, b) => a.name.localeCompare(b.name));
 
     return (
         <div className="product-grid">
