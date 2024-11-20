@@ -27,7 +27,7 @@ const LoginModal = ({ onClose, onLogin }) => {
           throw new Error('Passwords do not match');
         }
 
-        const registerResponse = await axios.post('http://10.54.9.90:3001/register', {
+        const registerResponse = await axios.post('http://192.168.44.110:3001/register', {
           nombre_usuario: formData.name,
           email: formData.email,
           password: formData.password
@@ -47,7 +47,7 @@ const LoginModal = ({ onClose, onLogin }) => {
           password: formData.password
         });
 
-        const loginResponse = await axios.post('http://10.54.9.90:3001/login', {
+        const loginResponse = await axios.post('http://192.168.44.110:3001/login', {
           email: formData.email,
           password: formData.password
         });

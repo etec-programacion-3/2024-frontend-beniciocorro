@@ -24,6 +24,9 @@ const Cart = ({ items, onRemoveItem }) => {
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp'
       }
+    }).then(() => {
+      items.forEach(item => onRemoveItem(item.cartId));
+      navigate('/');
     });
   };
 
