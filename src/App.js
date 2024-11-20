@@ -759,6 +759,22 @@ const PRODUCTS = [
 
   // Super Smash Bros
   { 
+    id: 79, 
+    franchise: 'smash', 
+    src: pyra, 
+    name: 'Pyra', 
+    price: 34.99, 
+    description: 'The powerful Fire Blade from Xenoblade Chronicles 2' 
+  },
+  { 
+    id: 80, 
+    franchise: 'smash', 
+    src: mythra, 
+    name: 'Mythra', 
+    price: 34.99, 
+    description: 'The legendary Light Blade from Xenoblade Chronicles 2' 
+  },
+  { 
     id: 81, 
     franchise: 'smash', 
     src: alex, 
